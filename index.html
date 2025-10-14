@@ -1,28 +1,46 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portafolio-tailwind</title>
-  </head>
-  <body>
-   <!-- index.html -->
-<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-	<div class="container mx-auto px-4 py-8">
-		<header class="text-center">
-			<h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">Portafolio Moderno</h1>
-			<p class="text-xl md:text-2xl text-gray-600 mb-8">Construido con Tailwind CSS & Vite</p>
-			<a
-				href="#proyectos"
-				class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition-colors">
-				Ver Proyectos
-			</a>
-		</header>
-	</div>
-</div>
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portafolio SPA</title>
+		<script type="module" src="/src/main.js"></script>
+	</head>
+	<body>
+		<!-- Skip link para accesibilidad -->
+		<a
+			href="#main"
+			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-500 text-white px-4 py-2 rounded">
+			Saltar al contenido principal
+		</a>
 
+		<!-- Navegación compartida -->
+		<nav class="bg-gray-900 text-white sticky top-0 z-50" role="navigation" aria-label="Navegación principal">
+			<div class="container mx-auto px-4">
+				<div class="flex justify-between items-center py-4">
+					<a href="#/" class="text-xl font-bold hover:text-blue-400 transition-colors" aria-label="Inicio">Portafolio</a>
+					<div class="space-x-6">
+						<a href="#/" class="hover:text-blue-400 transition-colors" aria-current="page">Inicio</a>
+						<a href="#/sobre" class="hover:text-blue-400 transition-colors">Sobre</a>
+						<a href="#/proyectos" class="hover:text-blue-400 transition-colors">Proyectos</a>
+						<a href="#/contacto" class="hover:text-blue-400 transition-colors">Contacto</a>
+					</div>
+				</div>
+			</div>
+		</nav>
 
-    <script type="module" src="/src/main.js"></script>
-  </body>
+		<!-- Área de contenido principal -->
+		<main id="app" class="min-h-screen" role="main">
+			<!-- Las vistas se renderizarán aquí -->
+		</main>
+
+		<!-- Footer compartido -->
+		<footer class="bg-gray-800 text-white py-8" role="contentinfo">
+			<div class="container mx-auto px-4 text-center">
+				<p>&copy; 2025 Portafolio SPA. Construido con Tailwind & JavaScript vanilla.</p>
+			</div>
+		</footer>
+	</body>
 </html>
+
