@@ -1,46 +1,45 @@
 <!-- index.html -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Portafolio SPA</title>
+		<title>Portfolio SPA</title>
 		<script type="module" src="/src/main.js"></script>
 	</head>
 	<body>
-		<!-- Skip link para accesibilidad -->
+		<!-- Skip link for accessibility -->
 		<a
-			href="#main"
+			href="#app"
 			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-500 text-white px-4 py-2 rounded">
-			Saltar al contenido principal
+			Skip to main content
 		</a>
 
-		<!-- Navegación compartida -->
-		<nav class="bg-gray-900 text-white sticky top-0 z-50" role="navigation" aria-label="Navegación principal">
+		<!-- Shared navigation (semantic list) -->
+		<nav class="bg-gray-900 text-white sticky top-0 z-50" role="navigation" aria-label="Main navigation">
 			<div class="container mx-auto px-4">
 				<div class="flex justify-between items-center py-4">
-					<a href="#/" class="text-xl font-bold hover:text-blue-400 transition-colors" aria-label="Inicio">Portafolio</a>
-					<div class="space-x-6">
-						<a href="#/" class="hover:text-blue-400 transition-colors" aria-current="page">Inicio</a>
-						<a href="#/sobre" class="hover:text-blue-400 transition-colors">Sobre</a>
-						<a href="#/proyectos" class="hover:text-blue-400 transition-colors">Proyectos</a>
-						<a href="#/contacto" class="hover:text-blue-400 transition-colors">Contacto</a>
-					</div>
+					<a href="#/" class="text-xl font-bold hover:text-blue-400 transition-colors" aria-label="Home">Portfolio</a>
+					<ul class="flex gap-6">
+						<li><a href="#/" class="hover:text-blue-400 transition-colors" aria-current="page">Home</a></li>
+						<li><a href="#/about" class="hover:text-blue-400 transition-colors">About</a></li>
+						<li><a href="#/projects" class="hover:text-blue-400 transition-colors">Projects</a></li>
+						<li><a href="#/contact" class="hover:text-blue-400 transition-colors">Contact</a></li>
+					</ul>
 				</div>
 			</div>
 		</nav>
 
-		<!-- Área de contenido principal -->
+		<!-- Main content area -->
 		<main id="app" class="min-h-screen" role="main">
-			<!-- Las vistas se renderizarán aquí -->
+			<!-- Views will be rendered here -->
 		</main>
 
-		<!-- Footer compartido -->
+		<!-- Shared footer -->
 		<footer class="bg-gray-800 text-white py-8" role="contentinfo">
 			<div class="container mx-auto px-4 text-center">
-				<p>&copy; 2025 Portafolio SPA. Construido con Tailwind & JavaScript vanilla.</p>
+				<p>&copy; 2025 Portfolio SPA. Built with Tailwind & Vanilla JS.</p>
 			</div>
 		</footer>
 	</body>
 </html>
-

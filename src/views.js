@@ -13,7 +13,7 @@ export const views = {
       </section>
     `,
 	},
-	'/sobre': {
+	'/about': {
 		template: `
       <section class="py-16">
         <div class="container mx-auto px-4">
@@ -46,4 +46,3 @@ export const views = {
     `,
 	},
 };
-
