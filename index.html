@@ -16,7 +16,7 @@
 		</a>
 
 		<!-- Shared navigation (semantic list) -->
-		<nav class="bg-gray-900 text-white sticky top-0 z-50" role="navigation" aria-label="Main navigation">
+		<nav class="fixed top-0 left-0 w-full bg-gray-900 text-white z-50" role="navigation" aria-label="Main navigation">
 			<div class="container mx-auto px-4">
 				<div class="flex justify-between items-center py-4">
 					<a href="#/" class="text-xl font-bold hover:text-blue-400 transition-colors" aria-label="Home">Portfolio</a>
@@ -31,12 +31,12 @@
 		</nav>
 
 		<!-- Main content area -->
-		<main id="app" class="min-h-screen" role="main">
+		<main id="app" class="fixed inset-0 min-h-screen flex items-center justify-center" role="main">
 			<!-- Views will be rendered here -->
 		</main>
 
 		<!-- Shared footer -->
-		<footer class="bg-gray-800 text-white py-8" role="contentinfo">
+		<footer class="fixed bottom-0 left-0 w-full z-50 bg-gray-800 text-white py-8" role="contentinfo">
 			<div class="container mx-auto px-4 text-center">
 				<p>&copy; 2025 Portfolio SPA. Built with Tailwind & Vanilla JS.</p>
 			</div>
