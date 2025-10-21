@@ -1,0 +1,141 @@
+export default {
+	template: `
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold text-gray-900 mb-8 text-center">Sistema de Componentes</h1>
+        
+        <!-- Sistema de Botones -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Botones</h2>
+          <div class="flex flex-wrap gap-4">
+            <button class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md border border-transparent bg-primary-500 text-white hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+              Botón Primario
+            </button>
+            
+            <button class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+              Botón Secundario
+            </button>
+            
+            <button class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-colors">
+              Botón Ghost
+            </button>
+          </div>
+        </div>
+        
+        <!-- Aquí añadirás más componentes en los siguientes pasos -->
+        
+
+   <!-- Sistema de Tarjetas -->
+   <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+     <h2 class="text-2xl font-bold text-gray-900 mb-4">Tarjetas</h2>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+       <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+         <div class="aspect-w-16 aspect-h-9 bg-gray-200">
+           <img src="https://picsum.photos/400/225?random=1" alt="Imagen del proyecto" class="w-full h-48 object-cover" />
+         </div>
+         <div class="p-6">
+           <h3 class="text-lg font-semibold text-gray-900 mb-2">Título del Proyecto</h3>
+           <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+             Descripción del proyecto que demuestra el patrón de tarjeta con espaciado y jerarquía tipográfica consistentes.
+           </p>
+           <div class="flex flex-wrap gap-2">
+             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+               React
+             </span>
+             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+               API
+             </span>
+           </div>
+         </div>
+       </article>
+
+       <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+         <div class="aspect-w-16 aspect-h-9 bg-gray-200">
+           <img src="https://picsum.photos/400/225?random=2" alt="Imagen del proyecto" class="w-full h-48 object-cover" />
+         </div>
+         <div class="p-6">
+           <h3 class="text-lg font-semibold text-gray-900 mb-2">Título del Proyecto</h3>
+           <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+             Descripción del proyecto que demuestra el patrón de tarjeta con espaciado y jerarquía tipográfica consistentes.
+           </p>
+           <div class="flex flex-wrap gap-2">
+             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+               React
+             </span>
+             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+               API
+             </span>
+           </div>
+         </div>
+       </article>
+              <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+         <div class="aspect-w-16 aspect-h-9 bg-gray-200">
+           <img src="https://picsum.photos/400/225?random=3" alt="Imagen del proyecto" class="w-full h-48 object-cover" />
+         </div>
+         <div class="p-6">
+           <h3 class="text-lg font-semibold text-gray-900 mb-2">Título del Proyecto</h3>
+           <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+             Descripción del proyecto que demuestra el patrón de tarjeta con espaciado y jerarquía tipográfica consistentes.
+           </p>
+           <div class="flex flex-wrap gap-2">
+             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+               React
+             </span>
+             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+               API
+             </span>
+           </div>
+         </div>
+       </article>
+
+       <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+         <div class="aspect-w-16 aspect-h-9 bg-gray-200">
+           <img src="https://picsum.photos/400/225?random=4" alt="Imagen del proyecto" class="w-full h-48 object-cover" />
+         </div>
+         <div class="p-6">
+           <h3 class="text-lg font-semibold text-gray-900 mb-2">Título del Proyecto</h3>
+           <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+             Descripción del proyecto que demuestra el patrón de tarjeta con espaciado y jerarquía tipográfica consistentes.
+           </p>
+           <div class="flex flex-wrap gap-2">
+             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+               React
+             </span>
+             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+               API
+             </span>
+           </div>
+         </div>
+       </article>
+       <!-- Duplica este patrón 2-3 veces para ver el grid -->
+       <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+         <div class="aspect-w-16 aspect-h-9 bg-gray-200">
+           <img src="https://picsum.photos/400/225?random=5" alt="Imagen del proyecto" class="w-full h-48 object-cover" />
+         </div>
+         <div class="p-6">
+           <h3 class="text-lg font-semibold text-gray-900 mb-2">Título del Proyecto</h3>
+           <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+             Descripción del proyecto que demuestra el patrón de tarjeta con espaciado y jerarquía tipográfica consistentes.
+           </p>
+           <div class="flex flex-wrap gap-2">
+             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+               React
+             </span>
+             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+               API
+             </span>
+           </div>
+         </div>
+       </article>
+       </div>
+
+       <!-- Duplica este patrón 2-3 veces para ver el grid -->
+
+     </div>
+   </div>
+        <a href="#/" class="inline-block text-primary-500 hover:text-primary-600 font-medium">← Volver a Inicio</a>
+      </div>
+    </section>
+  `,
+};

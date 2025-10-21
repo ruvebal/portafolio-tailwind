@@ -7,24 +7,31 @@
 		<title>Portfolio SPA</title>
 		<script type="module" src="/src/main.js"></script>
 	</head>
-	<body>
+	<body class="bg-surface-light text-content">
+		<!-- Using theme tokens: light surface + default text -->
 		<!-- Skip link for accessibility -->
 		<a
 			href="#app"
-			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-500 text-white px-4 py-2 rounded">
+			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-500 text-content-inverted px-4 py-2 rounded">
+			<!-- Use brand and inverted text -->
 			Skip to main content
 		</a>
 
 		<!-- Shared navigation (semantic list) -->
-		<nav class="fixed top-0 left-0 w-full bg-gray-900 text-white z-50" role="navigation" aria-label="Main navigation">
-			<div class="container mx-auto px-4">
+		<nav
+			class="fixed top-0 left-0 w-full bg-primary-900 text-content-inverted z-50 shadow-elevated"
+			role="navigation"
+			aria-label="Main navigation">
+			<!-- Brand header with elevated shadow -->
+			<div class="mx-auto px-4">
 				<div class="flex justify-between items-center py-4">
-					<a href="#/" class="text-xl font-bold hover:text-blue-400 transition-colors" aria-label="Home">Portfolio</a>
+					<a href="#/" class="text-4xl font-bold hover:text-primary-50 transition-colors" aria-label="Home">Portfolio</a>
+					<!-- Using default utility size (text-4xl) overridden in config -->
 					<ul class="flex gap-6">
-						<li><a href="#/" class="hover:text-blue-400 transition-colors" aria-current="page">Home</a></li>
-						<li><a href="#/about" class="hover:text-blue-400 transition-colors">About</a></li>
-						<li><a href="#/projects" class="hover:text-blue-400 transition-colors">Projects</a></li>
-						<li><a href="#/contact" class="hover:text-blue-400 transition-colors">Contact</a></li>
+						<li><a href="#/" class="hover:text-primary-50 transition-colors" aria-current="page">Home</a></li>
+						<li><a href="#/about" class="hover:text-primary-50 transition-colors">About</a></li>
+						<li><a href="#/projects" class="hover:text-primary-50 transition-colors">Projects</a></li>
+						<li><a href="#/contact" class="hover:text-primary-50 transition-colors">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -32,13 +39,16 @@
 
 		<!-- Main content area -->
 		<main id="app" class="fixed inset-0 min-h-screen flex items-center justify-center" role="main">
+			<!-- Views use tokens too -->
 			<!-- Views will be rendered here -->
 		</main>
 
 		<!-- Shared footer -->
-		<footer class="fixed bottom-0 left-0 w-full z-50 bg-gray-800 text-white py-8" role="contentinfo">
+		<footer class="fixed bottom-0 left-0 w-full z-50 bg-surface-dark text-content-inverted py-8" role="contentinfo">
+			<!-- Dark surface + inverted text -->
 			<div class="container mx-auto px-4 text-center">
-				<p>&copy; 2025 Portfolio SPA. Built with Tailwind & Vanilla JS.</p>
+				<p class="text-lg">&copy; 2025 Portfolio SPA. Built with Tailwind & Vanilla JS.</p>
+				<!-- Using default utility size (text-lg) overridden in config -->
 			</div>
 		</footer>
 	</body>

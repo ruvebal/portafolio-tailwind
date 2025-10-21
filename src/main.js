@@ -1,7 +1,7 @@
 // src/main.js
 import SimpleRouter from './router.js';
 import './style.css';
-import { views } from './views.js';
+import { views } from './views/index.js';
 
 // Initialize router
 const router = new SimpleRouter(views);
