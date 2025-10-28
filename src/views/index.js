@@ -1,16 +1,10 @@
-// src/views/index.js
-import notFound from './404.js';
-import about from './about.js';
-import components from './components.js';
-import contact from './contact.js';
-import home from './home.js';
-import projects from './projects.js';
-
+// demo/src/views/index.js
 export const views = {
-	'/': home,
-	'/about': about,
-	'/projects': projects,
-	'/contact': contact,
-	'/components': components,
-	404: notFound,
+	'/': { templateId: 'view-home', templateUrl: './src/views/home.html' },
+	'/about': { templateId: 'view-about', templateUrl: './src/views/about.html' },
+	'/projects': { templateId: 'view-projects', templateUrl: './src/views/projects.html' },
+	'/contact': { templateId: 'view-contact', templateUrl: './src/views/contact.html' },
+		'/components': { templateId: 'view-components', templateUrl: './src/views/components.html' },
+	404: { templateId: 'view-404', templateUrl: './src/views/404.html' },
 };
+

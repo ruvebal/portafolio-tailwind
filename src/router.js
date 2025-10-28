@@ -1,49 +1,61 @@
-// src/router.js
-class SimpleRouter {
+export class SimpleRouter {
 	constructor(routes) {
-		this.routes = routes;
+		this.routes = routes; // { '/': { templateId, templateUrl, onMount? }, ... }
 		this.currentView = null;
-
-		// Listen for hash changes
 		window.addEventListener('hashchange', () => this.handleRoute());
 		window.addEventListener('load', () => this.handleRoute());
 	}
 
-	handleRoute() {
+	async handleRoute() {
 		const hash = window.location.hash.slice(1) || '/';
-		const route = this.routes[hash] || this.routes['404'];
-
+		const route = this.routes[hash] || this.routes[404];
 		if (route !== this.currentView) {
-			this.renderView(route);
+			await this.renderView(route);
 			this.updateActiveNav(hash);
 			this.currentView = route;
 		}
 	}
 
-	renderView(route) {
+	async renderView(route) {
 		const app = document.getElementById('app');
-		app.innerHTML = route.template;
+		app.textContent = '';
 
-		// Execute any view-specific JavaScript
-		if (route.script) {
-			route.script();
+		await ensureTemplateAvailable(route.templateId, route.templateUrl);
+
+		const tpl = document.getElementById(route.templateId);
+		if (!tpl) {
+			app.textContent = 'Template not found';
+			return;
 		}
+
+		app.appendChild(tpl.content.cloneNode(true));
+		if (typeof route.onMount === 'function') route.onMount(app);
 	}
 
 	updateActiveNav(currentHash) {
-		// Only consider SPA router links that start with "#/".
-		// This avoids touching in-page anchors like "#app" (skip links, section links).
 		document.querySelectorAll('nav a[href^="#/"]').forEach((link) => {
 			link.removeAttribute('aria-current');
 		});
-
-		// currentHash is like "/", "/about", ...
-		// Build the full selector as `#${currentHash}` to match nav hrefs (e.g. href="#/about").
 		const activeLink = document.querySelector(`nav a[href="#${currentHash}"]`);
-		if (activeLink) {
-			activeLink.setAttribute('aria-current', 'page');
-		}
+		if (activeLink) activeLink.setAttribute('aria-current', 'page');
 	}
 }
 
-export default SimpleRouter;
+const templateCache = new Set();
+
+async function ensureTemplateAvailable(templateId, templateUrl) {
+	if (document.getElementById(templateId)) return;
+	if (!templateUrl || templateCache.has(templateId)) return;
+
+	const res = await fetch(templateUrl, { credentials: 'same-origin' });
+	if (!res.ok) throw new Error(`Failed to load template: ${templateUrl}`);
+	const html = await res.text();
+
+	const doc = new DOMParser().parseFromString(html, 'text/html');
+	const fetchedTemplate = doc.querySelector('template');
+	if (!fetchedTemplate || !fetchedTemplate.id) {
+		throw new Error(`No <template id="..."> found in ${templateUrl}`);
+	}
+	document.body.appendChild(fetchedTemplate);
+	templateCache.add(fetchedTemplate.id);
+}

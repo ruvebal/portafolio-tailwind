@@ -1,54 +1,48 @@
-<!-- index.html -->
+<!-- demo/index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Portfolio SPA</title>
-		<script type="module" src="/src/main.js"></script>
+		<title>Portfolio SPA — HTML Template</title>
+		<!--<link rel="stylesheet" href="./src/style.css" />-->
+		<script type="module" src="./src/main.js"></script>
+		<!--<script src="https://cdn.tailwindcss.com"></script>-->
 	</head>
-	<body class="bg-surface-light text-content">
-		<!-- Using theme tokens: light surface + default text -->
-		<!-- Skip link for accessibility -->
+	<body class="bg-gray-50 text-gray-900">
 		<a
 			href="#app"
-			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-500 text-content-inverted px-4 py-2 rounded">
-			<!-- Use brand and inverted text -->
-			Skip to main content
+			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded">
+			Saltar al contenido principal
 		</a>
 
-		<!-- Shared navigation (semantic list) -->
+		<!-- Navegación compartida (lista semántica) -->
 		<nav
-			class="fixed top-0 left-0 w-full bg-primary-900 text-content-inverted z-50 shadow-elevated"
+			class="fixed top-0 left-0 w-full bg-gray-900 text-white z-50 shadow-lg"
 			role="navigation"
-			aria-label="Main navigation">
-			<!-- Brand header with elevated shadow -->
+			aria-label="Navegación principal">
 			<div class="mx-auto px-4">
 				<div class="flex justify-between items-center py-4">
-					<a href="#/" class="text-4xl font-bold hover:text-primary-50 transition-colors" aria-label="Home">Portfolio</a>
-					<!-- Using default utility size (text-4xl) overridden in config -->
+					<a href="#/" class="text-4xl font-bold hover:text-gray-300 transition-colors" aria-label="Inicio">Portfolio</a>
 					<ul class="flex gap-6">
-						<li><a href="#/" class="hover:text-primary-50 transition-colors" aria-current="page">Home</a></li>
-						<li><a href="#/about" class="hover:text-primary-50 transition-colors">About</a></li>
-						<li><a href="#/projects" class="hover:text-primary-50 transition-colors">Projects</a></li>
-						<li><a href="#/contact" class="hover:text-primary-50 transition-colors">Contact</a></li>
+						<li><a href="#/" class="hover:text-gray-300 transition-colors" aria-current="page">Inicio</a></li>
+						<li><a href="#/about" class="hover:text-gray-300 transition-colors">Acerca de</a></li>
+						<li><a href="#/projects" class="hover:text-gray-300 transition-colors">Proyectos</a></li>
+						<li><a href="#/contact" class="hover:text-gray-300 transition-colors">Contacto</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 
-		<!-- Main content area -->
+		<!-- Área de contenido principal -->
 		<main id="app" class="min-h-screen pt-20 pb-24 flex items-center justify-center" role="main">
-			<!-- Views use tokens too -->
-			<!-- Views will be rendered here -->
+			<!-- Las plantillas de vistas son externas en ./src/views/*.html y son cargadas de forma lazy por el router. -->
 		</main>
 
-		<!-- Shared footer -->
-		<footer class="fixed bottom-0 left-0 w-full z-50 bg-surface-dark text-content-inverted py-8" role="contentinfo">
-			<!-- Dark surface + inverted text -->
+		<!-- Pie de página compartido -->
+		<footer class="fixed bottom-0 left-0 w-full z-50 bg-gray-800 text-white py-8" role="contentinfo">
 			<div class="container mx-auto px-4 text-center">
-				<p class="text-lg">&copy; 2025 Portfolio SPA. Built with Tailwind & Vanilla JS.</p>
-				<!-- Using default utility size (text-lg) overridden in config -->
+				<p class="text-lg">&copy; 2025 Portfolio SPA. Construido con Tailwind y Vanilla JS.</p>
 			</div>
 		</footer>
 	</body>
