@@ -5,31 +5,40 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Portfolio SPA — HTML Template</title>
-		<!--<link rel="stylesheet" href="./src/style.css" />-->
+		<link rel="stylesheet" href="./src/style.css" />
 		<script type="module" src="./src/main.js"></script>
-		<!--<script src="https://cdn.tailwindcss.com"></script>-->
 	</head>
-	<body class="bg-gray-50 text-gray-900">
+	<body class="bg-background text-foreground">
 		<a
 			href="#app"
-			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded">
+			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded">
 			Saltar al contenido principal
 		</a>
 
 		<!-- Navegación compartida (lista semántica) -->
 		<nav
-			class="fixed top-0 left-0 w-full bg-gray-900 text-white z-50 shadow-lg"
+			class="fixed top-0 left-0 w-full bg-card text-card-foreground z-50 shadow-sm border-b border-border"
 			role="navigation"
 			aria-label="Navegación principal">
 			<div class="mx-auto px-4">
 				<div class="flex justify-between items-center py-4">
-					<a href="#/" class="text-4xl font-bold hover:text-gray-300 transition-colors" aria-label="Inicio">Portfolio</a>
-					<ul class="flex gap-6">
-						<li><a href="#/" class="hover:text-gray-300 transition-colors" aria-current="page">Inicio</a></li>
-						<li><a href="#/about" class="hover:text-gray-300 transition-colors">Acerca de</a></li>
-						<li><a href="#/projects" class="hover:text-gray-300 transition-colors">Proyectos</a></li>
-						<li><a href="#/contact" class="hover:text-gray-300 transition-colors">Contacto</a></li>
-					</ul>
+					<a href="#/" class="text-4xl font-bold hover:text-muted-foreground transition-colors" aria-label="Inicio">
+						Portfolio
+					</a>
+					<div class="flex items-center gap-6">
+						<ul class="flex gap-6">
+							<li><a href="#/" class="hover:text-muted-foreground transition-colors" aria-current="page">Inicio</a></li>
+							<li><a href="#/about" class="hover:text-muted-foreground transition-colors">Acerca de</a></li>
+							<li><a href="#/projects" class="hover:text-muted-foreground transition-colors">Proyectos</a></li>
+							<li><a href="#/contact" class="hover:text-muted-foreground transition-colors">Contacto</a></li>
+						</ul>
+						<button
+							type="button"
+							id="theme-toggle"
+							class="px-3 py-2 rounded-md hover:bg-muted/80 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 transition-colors"
+							aria-pressed="false"
+							aria-label="Cambiar tema"></button>
+					</div>
 				</div>
 			</div>
 		</nav>
@@ -40,7 +49,9 @@
 		</main>
 
 		<!-- Pie de página compartido -->
-		<footer class="fixed bottom-0 left-0 w-full z-50 bg-gray-800 text-white py-8" role="contentinfo">
+		<footer
+			class="fixed bottom-0 left-0 w-full z-50 bg-card text-card-foreground py-8 border-t border-border"
+			role="contentinfo">
 			<div class="container mx-auto px-4 text-center">
 				<p class="text-lg">&copy; 2025 Portfolio SPA. Construido con Tailwind y Vanilla JS.</p>
 			</div>

@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "license:headers": "node ./scripts/apply-license-headers.mjs",
+    "license:check": "node ./scripts/apply-license-headers.mjs --check"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
