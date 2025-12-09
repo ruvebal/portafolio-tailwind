@@ -15,12 +15,49 @@ export class SimpleRouter {
 	}
 
 	async handleRoute() {
-		const hash = window.location.hash.slice(1) || '/';
+		const fullHash = window.location.hash.slice(1) || '/';
+		// Split hash into route and section (e.g., "/#gallery" -> route: "/", section: "gallery")
+		const [routeHash, sectionHash] = fullHash.split('#');
+		const hash = routeHash || '/';
 		const route = this.routes[hash] || this.routes[404];
+
 		if (route !== this.currentView) {
+			// Call onUnmount on the previous route before switching
+			if (this.currentView && typeof this.currentView.onUnmount === 'function') {
+				this.currentView.onUnmount();
+			}
+
 			await this.renderView(route);
 			this.updateActiveNav(hash);
 			this.currentView = route;
+
+			// If there's a section hash, scroll to it after route loads
+			if (sectionHash) {
+				setTimeout(() => {
+					const section = document.querySelector(`#${sectionHash}`);
+					if (section) {
+						const navbar = document.getElementById('navbar');
+						const navHeight = navbar?.offsetHeight || 80;
+						window.scrollTo({
+							top: section.offsetTop - navHeight,
+							behavior: 'smooth',
+						});
+					}
+				}, 100);
+			}
+		} else if (sectionHash) {
+			// Same route but different section - just scroll
+			setTimeout(() => {
+				const section = document.querySelector(`#${sectionHash}`);
+				if (section) {
+					const navbar = document.getElementById('navbar');
+					const navHeight = navbar?.offsetHeight || 80;
+					window.scrollTo({
+						top: section.offsetTop - navHeight,
+						behavior: 'smooth',
+					});
+				}
+			}, 50);
 		}
 	}
 
