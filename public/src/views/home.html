@@ -1,0 +1,376 @@
+<template id="view-home">
+	<main style="position: relative; z-index: 1">
+		<!-- Hero Section with Parallax -->
+		<section
+			id="hero"
+			class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
+			style="z-index: 1">
+			<!-- Parallax background elements -->
+			<div class="absolute inset-0 overflow-hidden" data-parallax="0.3" style="z-index: 0">
+				<div class="absolute top-20 left-20 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
+				<div class="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+			</div>
+
+			<div class="relative text-center px-4 max-w-5xl mx-auto" style="z-index: 1">
+				<h1 class="text-5xl md:text-7xl font-bold mb-6 text-white" data-animate="fade-up">
+					<span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+						Welcome to Excellence
+					</span>
+				</h1>
+				<p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto" data-animate="fade-up">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna
+					aliqua.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="fade-up">
+					<a
+						href="#features"
+						class="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-all hover:-translate-y-1 hover:shadow-xl">
+						Explore Features
+					</a>
+					<a
+						href="#gallery"
+						class="px-8 py-4 border-2 border-white/30 hover:border-white/60 text-white font-semibold rounded-lg transition-all hover:-translate-y-1">
+						View Gallery
+					</a>
+				</div>
+			</div>
+
+			<!-- Scroll indicator -->
+			<div
+				class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 text-sm">
+				<span>Scroll Down</span>
+				<div class="w-5 h-8 border-2 border-white/40 rounded-full flex justify-center pt-2">
+					<div class="w-1 h-2 bg-white/60 rounded-full animate-bounce"></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features Section -->
+		<section id="features" class="py-20 lg:py-32 bg-white dark:bg-gray-900">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white" data-animate="fade-up">
+						Amazing Features
+					</h2>
+					<p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-animate="fade-up">
+						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-3 gap-8">
+					<!-- Feature 1 -->
+					<div
+						class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+						data-animate="fade-up">
+						<div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-6">
+							<svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Lightning Fast</h3>
+						<p class="text-gray-600 dark:text-gray-400">
+							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						</p>
+					</div>
+
+					<!-- Feature 2 -->
+					<div
+						class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+						data-animate="fade-up">
+						<div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6">
+							<svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Mobile First</h3>
+						<p class="text-gray-600 dark:text-gray-400">
+							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+
+					<!-- Feature 3 -->
+					<div
+						class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+						data-animate="fade-up">
+						<div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center mb-6">
+							<svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Secure & Safe</h3>
+						<p class="text-gray-600 dark:text-gray-400">
+							Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Gallery Section -->
+		<section id="gallery" class="py-20 lg:py-32 bg-gray-50 dark:bg-gray-800">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white" data-animate="fade-up">
+						Visual Showcase
+					</h2>
+					<p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-animate="fade-up">
+						Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<!-- Gallery Item 1 -->
+					<article
+						class="project-card group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+						data-animate="fade-up">
+						<div class="aspect-video overflow-hidden">
+							<img
+								src="https://picsum.photos/800/600?random=10"
+								alt="Gallery Image 1"
+								class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+								loading="lazy" />
+						</div>
+						<div class="p-6">
+							<h3
+								class="text-lg font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+								Stunning Landscape
+							</h3>
+							<p class="text-gray-600 dark:text-gray-400 text-sm">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
+							</p>
+						</div>
+					</article>
+
+					<!-- Gallery Item 2 -->
+					<article
+						class="project-card group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+						data-animate="fade-up">
+						<div class="aspect-video overflow-hidden">
+							<img
+								src="https://picsum.photos/800/600?random=11"
+								alt="Gallery Image 2"
+								class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+								loading="lazy" />
+						</div>
+						<div class="p-6">
+							<h3
+								class="text-lg font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+								Urban Architecture
+							</h3>
+							<p class="text-gray-600 dark:text-gray-400 text-sm">
+								Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+							</p>
+						</div>
+					</article>
+
+					<!-- Gallery Item 3 -->
+					<article
+						class="project-card group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+						data-animate="fade-up">
+						<div class="aspect-video overflow-hidden">
+							<img
+								src="https://picsum.photos/800/600?random=12"
+								alt="Gallery Image 3"
+								class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+								loading="lazy" />
+						</div>
+						<div class="p-6">
+							<h3
+								class="text-lg font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+								Nature's Beauty
+							</h3>
+							<p class="text-gray-600 dark:text-gray-400 text-sm">
+								Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
+							</p>
+						</div>
+					</article>
+
+					<!-- Gallery Item 4 -->
+					<article
+						class="project-card group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+						data-animate="fade-up">
+						<div class="aspect-video overflow-hidden">
+							<img
+								src="https://picsum.photos/800/600?random=13"
+								alt="Gallery Image 4"
+								class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+								loading="lazy" />
+						</div>
+						<div class="p-6">
+							<h3
+								class="text-lg font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+								Modern Design
+							</h3>
+							<p class="text-gray-600 dark:text-gray-400 text-sm">
+								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+							</p>
+						</div>
+					</article>
+
+					<!-- Gallery Item 5 -->
+					<article
+						class="project-card group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+						data-animate="fade-up">
+						<div class="aspect-video overflow-hidden">
+							<img
+								src="https://picsum.photos/800/600?random=14"
+								alt="Gallery Image 5"
+								class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+								loading="lazy" />
+						</div>
+						<div class="p-6">
+							<h3
+								class="text-lg font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+								Creative Artwork
+							</h3>
+							<p class="text-gray-600 dark:text-gray-400 text-sm">
+								Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+							</p>
+						</div>
+					</article>
+
+					<!-- Gallery Item 6 -->
+					<article
+						class="project-card group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+						data-animate="fade-up">
+						<div class="aspect-video overflow-hidden">
+							<img
+								src="https://picsum.photos/800/600?random=15"
+								alt="Gallery Image 6"
+								class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+								loading="lazy" />
+						</div>
+						<div class="p-6">
+							<h3
+								class="text-lg font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+								Abstract Concepts
+							</h3>
+							<p class="text-gray-600 dark:text-gray-400 text-sm">
+								Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.
+							</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- Stats Section -->
+		<section id="stats" class="py-20 lg:py-32 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid md:grid-cols-4 gap-8 text-center">
+					<div data-animate="fade-up">
+						<div class="text-5xl md:text-6xl font-bold mb-4">10K+</div>
+						<div class="text-xl text-purple-100">Happy Customers</div>
+					</div>
+					<div data-animate="fade-up">
+						<div class="text-5xl md:text-6xl font-bold mb-4">500+</div>
+						<div class="text-xl text-purple-100">Projects Completed</div>
+					</div>
+					<div data-animate="fade-up">
+						<div class="text-5xl md:text-6xl font-bold mb-4">50+</div>
+						<div class="text-xl text-purple-100">Team Members</div>
+					</div>
+					<div data-animate="fade-up">
+						<div class="text-5xl md:text-6xl font-bold mb-4">99%</div>
+						<div class="text-xl text-purple-100">Satisfaction Rate</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Testimonials Section -->
+		<section id="testimonials" class="py-20 lg:py-32 bg-white dark:bg-gray-900">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white" data-animate="fade-up">
+						What People Say
+					</h2>
+					<p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" data-animate="fade-up">
+						Read testimonials from our satisfied clients and partners.
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-3 gap-8">
+					<!-- Testimonial 1 -->
+					<div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg" data-animate="fade-up">
+						<div class="flex items-center mb-6">
+							<img
+								src="https://picsum.photos/100/100?random=20"
+								alt="Customer 1"
+								class="w-16 h-16 rounded-full mr-4 object-cover" />
+							<div>
+								<div class="font-semibold text-gray-900 dark:text-white">John Doe</div>
+								<div class="text-sm text-gray-600 dark:text-gray-400">CEO, Company Inc.</div>
+							</div>
+						</div>
+						<p class="text-gray-700 dark:text-gray-300 italic">
+							"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+							magna aliqua. Exceptional service!"
+						</p>
+					</div>
+
+					<!-- Testimonial 2 -->
+					<div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg" data-animate="fade-up">
+						<div class="flex items-center mb-6">
+							<img
+								src="https://picsum.photos/100/100?random=21"
+								alt="Customer 2"
+								class="w-16 h-16 rounded-full mr-4 object-cover" />
+							<div>
+								<div class="font-semibold text-gray-900 dark:text-white">Jane Smith</div>
+								<div class="text-sm text-gray-600 dark:text-gray-400">Designer, Creative Studio</div>
+							</div>
+						</div>
+						<p class="text-gray-700 dark:text-gray-300 italic">
+							"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. The team exceeded all our expectations.
+							Highly recommended!"
+						</p>
+					</div>
+
+					<!-- Testimonial 3 -->
+					<div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg" data-animate="fade-up">
+						<div class="flex items-center mb-6">
+							<img
+								src="https://picsum.photos/100/100?random=22"
+								alt="Customer 3"
+								class="w-16 h-16 rounded-full mr-4 object-cover" />
+							<div>
+								<div class="font-semibold text-gray-900 dark:text-white">Mike Johnson</div>
+								<div class="text-sm text-gray-600 dark:text-gray-400">Founder, Startup Co.</div>
+							</div>
+						</div>
+						<p class="text-gray-700 dark:text-gray-300 italic">
+							"Duis aute irure dolor in reprehenderit in voluptate velit esse. Professional, reliable, and innovative. Best
+							decision we made!"
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section id="cta" class="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<h2 class="text-4xl md:text-5xl font-bold mb-6" data-animate="fade-up">Ready to Get Started?</h2>
+				<p class="text-xl text-gray-300 mb-10" data-animate="fade-up">
+					Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+				</p>
+				<div data-animate="fade-up">
+					<a
+						href="#/contact"
+						class="inline-block px-10 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-all hover:-translate-y-1 hover:shadow-xl text-lg">
+						Contact Us Today
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+</template>

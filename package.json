@@ -1,23 +1,21 @@
 {
-  "name": "portafolio-tailwind",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "license:headers": "node ./scripts/apply-license-headers.mjs",
-    "license:check": "node ./scripts/apply-license-headers.mjs --check"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.18",
-    "vite": "^7.1.7"
-  },
-  "dependencies": {
-    "gsap": "^3.13.0",
-    "tailwind": "^4.0.0"
-  }
+	"name": "portafolio-tailwind",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"license:headers": "node ./scripts/apply-license-headers.mjs",
+		"license:check": "node ./scripts/apply-license-headers.mjs --check"
+	},
+	"devDependencies": {
+		"@tailwindcss/vite": "^4.0.0",
+		"tailwindcss": "^4.0.0",
+		"vite": "^7.1.7"
+	},
+	"dependencies": {
+		"gsap": "^3.13.0"
+	}
 }

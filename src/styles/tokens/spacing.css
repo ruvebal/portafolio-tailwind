@@ -1,0 +1,28 @@
+/**
+ * Spacing & Layout Tokens
+ * Custom spacing, border radius, shadows, and container settings
+ */
+
+@layer base {
+	:root {
+		/* ===== CUSTOM SPACING ===== */
+		/* Extending Tailwind's default spacing scale */
+		--spacing-18: 4.5rem;
+		--spacing-88: 22rem;
+
+		/* ===== BORDER RADIUS ===== */
+		--radius-4xl: 2rem;
+
+		/* ===== SHADOWS ===== */
+		/* Elevated shadow using primary color for subtle brand presence */
+		--shadow-elevated: 0 12px 30px -12px rgba(var(--color-primary-rgb), 0.35);
+
+		/* ===== CONTAINER ===== */
+		/* Responsive container padding */
+		--container-padding: 1rem;
+		--container-padding-sm: 1rem;
+		--container-padding-md: 2rem;
+		--container-padding-lg: 2rem;
+		--container-padding-xl: 2.5rem;
+	}
+}

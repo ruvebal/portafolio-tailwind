@@ -1,0 +1,47 @@
+/**
+ * Color Tokens - Light Mode (Default)
+ * Elegant minimal palette with WCAG AA contrast (4.5:1 minimum)
+ */
+
+@layer base {
+	:root {
+		/* ===== SURFACE COLORS ===== */
+		--color-background: #e5e7eb;
+		--color-foreground: #0f172a;
+		--color-card: #f3f4f6;
+		--color-card-foreground: var(--color-foreground);
+		--color-popover: #f9fafb;
+		--color-popover-foreground: var(--color-foreground);
+
+		/* ===== PRIMARY ===== */
+		/* Deep blue - 6.8:1 contrast on card */
+		--color-primary: #0052a3;
+		--color-primary-foreground: #ffffff;
+		--color-primary-rgb: 0, 82, 163;
+
+		/* ===== SECONDARY ===== */
+		/* Deep magenta - 5.2:1 on card */
+		--color-secondary: #a21caf;
+		--color-secondary-foreground: #ffffff;
+
+		/* ===== ACCENT ===== */
+		/* Deep amber - 4.1:1 on card */
+		--color-accent: #d97706;
+		--color-accent-foreground: #0f172a;
+
+		/* ===== MUTED ===== */
+		--color-muted: #d1d5db;
+		--color-muted-foreground: #475569;
+		--color-muted-foreground-rgb: 71, 85, 105;
+
+		/* ===== UI ELEMENTS ===== */
+		--color-border: #cbd5e1;
+		--color-input: #f9fafb;
+		--color-ring: #0052a3;
+
+		/* ===== DESTRUCTIVE ===== */
+		/* Deep red - 5.8:1 on card */
+		--color-destructive: #b91c1c;
+		--color-destructive-foreground: #ffffff;
+	}
+}

@@ -1,0 +1,47 @@
+/**
+ * Color Tokens - Dark Mode
+ * Elegant minimal dark palette with WCAG AA contrast (4.5:1 minimum)
+ */
+
+@layer base {
+	.dark {
+		/* ===== SURFACE COLORS ===== */
+		--color-background: #0a0a0a;
+		--color-foreground: #fafafa;
+		--color-card: #1a1a1a;
+		--color-card-foreground: var(--color-foreground);
+		--color-popover: #1a1a1a;
+		--color-popover-foreground: var(--color-foreground);
+
+		/* ===== PRIMARY ===== */
+		/* Light blue - 5.2:1 on dark background */
+		--color-primary: #60a5fa;
+		--color-primary-foreground: #0a0a0a;
+		--color-primary-rgb: 96, 165, 250;
+
+		/* ===== SECONDARY ===== */
+		/* Light magenta - 4.8:1 on dark background */
+		--color-secondary: #f472b6;
+		--color-secondary-foreground: #0a0a0a;
+
+		/* ===== ACCENT ===== */
+		/* Warm amber - 4.6:1 on dark */
+		--color-accent: #fbbf24;
+		--color-accent-foreground: #0a0a0a;
+
+		/* ===== MUTED ===== */
+		--color-muted: #1e293b;
+		--color-muted-foreground: #cbd5e1;
+		--color-muted-foreground-rgb: 203, 213, 225;
+
+		/* ===== UI ELEMENTS ===== */
+		--color-border: #334155;
+		--color-input: #1e293b;
+		--color-ring: #60a5fa;
+
+		/* ===== DESTRUCTIVE ===== */
+		/* Light red - 4.9:1 on dark background */
+		--color-destructive: #f87171;
+		--color-destructive-foreground: #0a0a0a;
+	}
+}

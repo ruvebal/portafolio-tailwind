@@ -1,0 +1,20 @@
+/**
+ * Main Stylesheet - Barrel Pattern Entry Point
+ *
+ * Import order matters:
+ * 1. Tailwind base styles
+ * 2. Theme configuration (@theme block)
+ * 3. Design tokens (CSS custom properties)
+ */
+
+/* Tailwind CSS 4 */
+@import 'tailwindcss';
+
+/* Theme configuration - registers tokens as Tailwind utilities */
+@import './theme.css';
+
+/* Design tokens - CSS custom properties */
+@import './tokens/typography.css';
+@import './tokens/colors.css';
+@import './tokens/colors-dark.css';
+@import './tokens/spacing.css';

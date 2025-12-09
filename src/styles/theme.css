@@ -1,0 +1,52 @@
+/**
+ * Tailwind 4 Theme Configuration (CSS-first)
+ * These tokens become Tailwind utility classes automatically
+ * References CSS custom properties defined in tokens/
+ */
+
+@theme {
+	/* ===== COLORS ===== */
+	/* Semantic color tokens referencing CSS custom properties */
+	--color-border: var(--color-border);
+	--color-input: var(--color-input);
+	--color-ring: var(--color-ring);
+	--color-background: var(--color-background);
+	--color-foreground: var(--color-foreground);
+
+	--color-primary: var(--color-primary);
+	--color-primary-foreground: var(--color-primary-foreground);
+
+	--color-secondary: var(--color-secondary);
+	--color-secondary-foreground: var(--color-secondary-foreground);
+
+	--color-destructive: var(--color-destructive);
+	--color-destructive-foreground: var(--color-destructive-foreground);
+
+	--color-muted: var(--color-muted);
+	--color-muted-foreground: var(--color-muted-foreground);
+
+	--color-accent: var(--color-accent);
+	--color-accent-foreground: var(--color-accent-foreground);
+
+	--color-popover: var(--color-popover);
+	--color-popover-foreground: var(--color-popover-foreground);
+
+	--color-card: var(--color-card);
+	--color-card-foreground: var(--color-card-foreground);
+
+	/* ===== SPACING ===== */
+	--spacing-18: 4.5rem;
+	--spacing-88: 22rem;
+
+	/* ===== BORDER RADIUS ===== */
+	--radius-4xl: 2rem;
+
+	/* ===== FONT FAMILY ===== */
+	--font-display: ui-sans-serif, system-ui, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-body: ui-sans-serif, system-ui, Inter, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji',
+		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+	/* ===== SHADOWS ===== */
+	--shadow-elevated: 0 12px 30px -12px rgba(var(--color-primary-rgb), 0.35);
+}
