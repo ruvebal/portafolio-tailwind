@@ -1,60 +1,211 @@
-# Deploy to GitHub Pages using Vite
+# ============================================================================
+# GITHUB ACTIONS WORKFLOW: DEPLOY TO GITHUB PAGES
+# ============================================================================
+# This workflow automates the deployment of a Vite-built static site to
+# GitHub Pages. It follows a two-stage pipeline: build → deploy.
+#
+# CONCEPT: GitHub Actions workflows are YAML files that define automated
+# processes. They run on GitHub's infrastructure in response to events
+# (like pushes, pull requests, or manual triggers).
+# ============================================================================
+
+# Workflow name: Displayed in the GitHub Actions UI
+# This helps identify the workflow among multiple workflows in a repository
 name: Deploy to GitHub Pages
 
+# ============================================================================
+# TRIGGERS (on:)
+# ============================================================================
+# Defines when this workflow should execute. Multiple triggers can be
+# specified, and the workflow runs if ANY of them occur.
 on:
  # Trigger on push to main branch
+ # CONCEPT: This is an event-based trigger. Every time code is pushed to
+ # the 'main' branch, GitHub will queue this workflow for execution.
+ # This enables continuous deployment (CD) - automatic deployments on every
+ # code change to the main branch.
  push:
   branches: ['main']
+
  # Allow manual trigger from Actions tab
+ # CONCEPT: workflow_dispatch enables manual execution from the GitHub UI.
+ # This is useful for:
+ # - Testing deployments without pushing code
+ # - Re-running failed deployments
+ # - Deploying specific versions on demand
  workflow_dispatch:
 
-# Sets permissions for GITHUB_TOKEN to allow deployment
+# ============================================================================
+# PERMISSIONS
+# ============================================================================
+# CONCEPT: GitHub Actions uses the principle of least privilege. By default,
+# workflows have minimal permissions. We must explicitly grant permissions
+# for security and to allow the workflow to perform required actions.
+#
+# Why each permission is needed:
+# - contents: read → Read repository code (to checkout and build)
+# - pages: write → Deploy to GitHub Pages (write access to Pages)
+# - id-token: write → Required for OIDC authentication with GitHub Pages API
 permissions:
  contents: read
  pages: write
  id-token: write
 
-# Allow only one concurrent deployment
+# ============================================================================
+# CONCURRENCY CONTROL
+# ============================================================================
+# CONCEPT: Prevents multiple deployments from running simultaneously.
+# This is critical for deployment workflows to avoid:
+# - Race conditions (multiple deploys overwriting each other)
+# - Resource conflicts
+# - Inconsistent final state
+#
+# How it works:
+# - group: 'pages' → All workflows with this group name share the concurrency limit
+# - cancel-in-progress: true → If a new deployment starts, cancel any running ones
+#                              This ensures only the latest code gets deployed
 concurrency:
  group: 'pages'
  cancel-in-progress: true
 
+# ============================================================================
+# JOBS
+# ============================================================================
+# CONCEPT: Jobs are independent units of work that run in parallel by default.
+# Each job runs on a fresh virtual machine. Jobs can depend on other jobs
+# using the 'needs' keyword to create a pipeline.
+#
+# This workflow has two jobs:
+# 1. build → Compiles the source code into deployable artifacts
+# 2. deploy → Takes the artifacts and publishes them to GitHub Pages
+#
+# The jobs run sequentially because 'deploy' depends on 'build' (see 'needs').
 jobs:
- # Build job
+ # ========================================================================
+ # JOB 1: BUILD
+ # ========================================================================
+ # Purpose: Transform source code into production-ready static files
+ # This job runs first and produces artifacts that the deploy job consumes
  build:
+  # CONCEPT: runs-on specifies the virtual machine environment.
+  # 'ubuntu-latest' provides a clean Ubuntu Linux environment with common
+  # tools pre-installed. Other options: windows-latest, macos-latest
   runs-on: ubuntu-latest
+
+  # CONCEPT: Steps are sequential commands/actions within a job.
+  # They execute one after another. If any step fails, the job fails.
   steps:
+   # Step 1: Checkout repository code
+   # CONCEPT: actions/checkout is a reusable action (pre-built workflow component)
+   # that downloads the repository code to the runner's filesystem.
+   # Without this, the runner has no access to your code.
+   # The '@v4' specifies the version (using semantic versioning for stability)
    - name: Checkout
      uses: actions/checkout@v4
 
+   # Step 2: Setup Node.js runtime environment
+   # CONCEPT: This action installs Node.js and npm on the runner.
+   # - node-version: '20' → Installs Node.js version 20 (LTS)
+   # - cache: 'npm' → Enables npm package caching to speed up subsequent runs
+   #                  by reusing node_modules from previous builds
    - name: Setup Node.js
      uses: actions/setup-node@v4
      with:
       node-version: '20'
       cache: 'npm'
 
+   # Step 3: Install project dependencies
+   # CONCEPT: npm ci (clean install) installs dependencies from package-lock.json
+   # It's faster and more reliable than 'npm install' for CI/CD because:
+   # - It deletes node_modules first (ensures clean state)
+   # - It installs exact versions from lock file (reproducible builds)
+   # - It fails if package.json and package-lock.json are out of sync
    - name: Install dependencies
      run: npm ci
 
+   # Step 4: Build the application
+   # CONCEPT: This runs the build script defined in package.json.
+   # For Vite projects, this typically:
+   # - Bundles JavaScript/CSS
+   # - Optimizes assets (minification, tree-shaking)
+   # - Outputs static files to './dist' directory
+   # The 'dist' folder contains the production-ready website
    - name: Build with Vite
      run: npm run build
 
+   # Step 5: Configure GitHub Pages
+   # CONCEPT: This action prepares the runner for GitHub Pages deployment.
+   # It sets up the necessary environment and validates that Pages is
+   # properly configured in the repository settings.
    - name: Setup Pages
      uses: actions/configure-pages@v4
 
+   # Step 6: Upload build artifacts
+   # CONCEPT: Artifacts are files produced by one job that need to be
+   # available to another job. Since jobs run on separate machines,
+   # artifacts must be explicitly uploaded and downloaded.
+   #
+   # This step:
+   # - Takes the './dist' folder (built static files)
+   # - Uploads it to GitHub's artifact storage
+   # - Makes it available for the 'deploy' job to download
+   #
+   # The artifact persists between jobs and is automatically cleaned up
+   # after the workflow completes.
    - name: Upload artifact
      uses: actions/upload-pages-artifact@v3
      with:
       path: './dist'
 
- # Deploy job
+ # ========================================================================
+ # JOB 2: DEPLOY
+ # ========================================================================
+ # Purpose: Publish the built artifacts to GitHub Pages
+ # This job runs after 'build' completes successfully
  deploy:
+  # ====================================================================
+  # ENVIRONMENT CONFIGURATION
+  # ====================================================================
+  # CONCEPT: Environments in GitHub Actions provide:
+  # - Deployment protection rules (approvals, wait timers)
+  # - Environment-specific secrets
+  # - Deployment history tracking
+  # - URL display for the deployed application
+  #
+  # 'github-pages' is a special environment name that GitHub recognizes
+  # for Pages deployments. It automatically configures the deployment.
   environment:
    name: github-pages
+
+   # CONCEPT: Dynamic URL from step output
+   # This references an output from a step that hasn't run yet, but
+   # GitHub Actions will evaluate it after the step completes.
+   # The 'deployment' step (below) produces a 'page_url' output containing
+   # the final deployed site URL (e.g., https://username.github.io/repo).
+   # This URL is then displayed in the GitHub Actions UI and deployment
+   # history, making it easy to access the deployed site.
    url: ${{ steps.deployment.outputs.page_url }}
+
+  # Same runner environment as build job
   runs-on: ubuntu-latest
+
+  # CONCEPT: Job dependency
+  # 'needs' creates a pipeline: this job waits for 'build' to complete
+  # successfully before starting. If 'build' fails, this job is skipped.
+  # This ensures we never deploy broken code.
   needs: build
+
   steps:
+   # Step 1: Deploy to GitHub Pages
+   # CONCEPT: This action handles the actual deployment process:
+   # - Downloads the artifact uploaded by the 'build' job
+   # - Publishes it to GitHub Pages
+   # - Sets up the 'page_url' output with the deployment URL
+   #
+   # The 'id: deployment' assigns an identifier to this step, allowing
+   # its outputs to be referenced elsewhere (like in environment.url above).
+   #
+   # After this step completes, your site is live at the GitHub Pages URL!
    - name: Deploy to GitHub Pages
      id: deployment
      uses: actions/deploy-pages@v4
